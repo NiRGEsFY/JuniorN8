@@ -12,10 +12,12 @@ namespace JuniorN8
         {
             int timeOneGuest = 10;
             Console.WriteLine("Введите количество человек в очереди");
-            int howMuchGuest = int.Parse(Console.ReadLine());
-            int minuts = (timeOneGuest * howMuchGuest) % 60;
-            int hourse = (timeOneGuest * howMuchGuest) / 60;
-            Console.WriteLine("Осталось ждать - " + hourse + " часа " + minuts + " минут");
+            int amountGuestInTurn = int.Parse(Console.ReadLine());
+            int MinutsInHours = 60;
+            int allMinutsInTurn = (timeOneGuest * amountGuestInTurn);
+            int minutsWaitTime = allMinutsInTurn % MinutsInHours;
+            int hourseWaitTime = allMinutsInTurn / MinutsInHours;
+            Console.WriteLine("Осталось ждать - " + hourseWaitTime + " часа " + minutsWaitTime + " минут");
             Console.ReadLine();
         }
     }
